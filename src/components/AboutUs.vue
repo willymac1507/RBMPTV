@@ -1,3 +1,35 @@
+<script setup>
+import { ArrowPathIcon, BoltIcon, CloudArrowUpIcon, LockClosedIcon, ScaleIcon } from '@heroicons/vue/20/solid';
+import Navbar from './Navbar.vue';
+import AboutCard from './AboutCard.vue';
+
+const features = [
+  {
+    name: 'Portable Appliance Testing',
+    image: 'pat-tested-plug.png',
+    description:
+        'What is Portable Appliance Testing, and why is it important to you, whether domestic, commercial or site based?',
+    href: '/about/pat',
+    icon: BoltIcon,
+  },
+  {
+    name: 'The Legal Bit',
+    image: 'E@W1989.png',
+    description:
+        'Read more about the legislation underpinning Portable Appliance Testing, and your legal obligations.',
+    href: '#',
+    icon: ScaleIcon,
+  },
+  {
+    name: 'How We Can Help',
+    image: 'PATman.png',
+    description:
+        'Find out what can we do to help ensure your safety, provide peace of mind and even save you money.',
+    href: '#',
+    icon: ArrowPathIcon,
+  },
+];
+</script>
 <template>
   <Navbar/>
   <div
@@ -85,32 +117,3 @@
     </div>
   </div>
 </template>
-<script setup>
-import { ArrowPathIcon, BoltIcon, CloudArrowUpIcon, LockClosedIcon, ScaleIcon } from '@heroicons/vue/20/solid';
-import Navbar from './Navbar.vue';
-import AboutCard from './AboutCard.vue';
-
-const features = [
-  {
-    name: 'Portable Appliance Testing',
-    description:
-        'What is Portable Appliance Testing, and why is it important to you, whether domestic, commercial or site based?',
-    href: '/about/pat',
-    icon: BoltIcon,
-  },
-  {
-    name: 'The Legal Bit',
-    description:
-        'Read more about the legislation underpinning Portable Appliance Testing, and your legal obligations.',
-    href: '#',
-    icon: ScaleIcon,
-  },
-  {
-    name: 'How We Can Help',
-    description:
-        'Find out what can we do to help ensure your safety, provide peace of mind and even save you money.',
-    href: '#',
-    icon: ArrowPathIcon,
-  },
-];
-</script>
