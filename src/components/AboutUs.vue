@@ -78,17 +78,7 @@
       <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
         <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
           <div v-for="feature in features" :key="feature.name" class="flex flex-col">
-            <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-              <component :is="feature.icon" aria-hidden="true" class="h-5 w-5 flex-none text-indigo-400"/>
-              {{ feature.name }}
-            </dt>
-            <dd class="items-start mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300">
-              <p class="flex-auto text-left">{{ feature.description }}</p>
-              <p class="mt-6">
-                <a :href="feature.href" class="text-sm font-semibold leading-6 text-indigo-400">Learn more <span
-                    aria-hidden="true">→</span></a>
-              </p>
-            </dd>
+            <AboutCard :feature="feature"/>
           </div>
         </dl>
       </div>
@@ -96,28 +86,29 @@
   </div>
 </template>
 <script setup>
-import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/vue/20/solid';
+import { ArrowPathIcon, BoltIcon, CloudArrowUpIcon, LockClosedIcon, ScaleIcon } from '@heroicons/vue/20/solid';
 import Navbar from './Navbar.vue';
+import AboutCard from './AboutCard.vue';
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Portable Appliance Testing',
     description:
-        'Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.',
-    href: '#',
-    icon: CloudArrowUpIcon,
+        'What is Portable Appliance Testing, and why is it important to you, whether domestic, commercial or site based?',
+    href: '/about/pat',
+    icon: BoltIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'The Legal Bit',
     description:
-        'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
+        'Read more about the legislation underpinning Portable Appliance Testing, and your legal obligations.',
     href: '#',
-    icon: LockClosedIcon,
+    icon: ScaleIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'How We Can Help',
     description:
-        'Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.',
+        'Find out what can we do to help ensure your safety, provide peace of mind and even save you money.',
     href: '#',
     icon: ArrowPathIcon,
   },
