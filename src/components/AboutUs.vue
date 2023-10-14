@@ -172,10 +172,12 @@ let modalContent = ref(null);
       </div>
     </div>
   </div>
-  <Modal :show="showModal" @close="showModal = false">
-    <template #header>{{ modalContent.title }}</template>
-    <template #default>
-      <div v-html="modalContent.body" />
-    </template>
-  </Modal>
+  <Teleport to="body">
+    <Modal :show="showModal" @close="showModal = false">
+      <template #header>{{ modalContent.title }}</template>
+      <template #default>
+        <div v-html="modalContent.body" />
+      </template>
+    </Modal>
+  </Teleport>
 </template>

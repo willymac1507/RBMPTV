@@ -24,7 +24,7 @@ function getImageUrl() {
     <dd
       class="items-start mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
     >
-      <img :src="getImageUrl()" alt="" class="rounded-xl opacity-50 pb-5" />
+      <img :src="getImageUrl()" alt="" class="rounded-xl opacity-90 pb-5" />
       <p class="flex-auto text-left">{{ feature.description }}</p>
       <p class="mt-6">
         <span
