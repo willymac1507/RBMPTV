@@ -1,9 +1,32 @@
 <script setup>
 import { ref } from "vue";
-import { ArrowPathIcon, BoltIcon, ScaleIcon } from "@heroicons/vue/20/solid";
+import {
+  ArrowPathIcon,
+  BoltIcon,
+  ScaleIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/vue/20/solid";
 import Modal from "./modal/Modal.vue";
 import Navbar from "./Navbar.vue";
 import AboutCard from "./AboutCard.vue";
+
+const modalContents = [
+  {
+    name: "PATModal",
+    title: "What is Portable Appliance Testing?",
+    body: "<p class='mb-4'>Portable Appliance Testing is the name given to a series of inspections and electrical tests carried out on portable equipment to ensure that it is able to be used safely. It is more accurately known as the Inspection and Testing of In-service Electrical Equipment.</p> <p class='mb-4'>It is important to note that performing a Portable Appliance Test does not just consist of plugging a piece of equipment into a PAT tester and seeing if it passes or fails.</p> <p>Portable Appliance Testing also encompasses the recording and upkeep of records.</p>",
+  },
+  {
+    name: "LegalModal",
+    title: "Is PAT testing a legal requirement?",
+    body: "Whilst PAT testing is not, currently, mandatory, there are four main pieces of legislation that clearly place a duty of care on any employer, employee and trades person. These are: <ul class='my-4 list-disc list-inside'><li>The Health & Safety at Work Act 1974<li>The Management of Health & Safety at Work Regulations<li>The Provision and Use of Work Equipment Regulations 1998<li>The Electricity at Work Regulations 1989</ul>Employers, Institutions and Landlords have a statutory responsibility to ensure that all portable appliances on the premises are safe for use. ",
+  },
+  {
+    name: "HelpModal",
+    title: "This is where we come in!",
+    body: "<p class='mb-4'>A regular PAT testing regime ensures that your duty of care under the above legislation is met, and crucially, documented and certified.</p> <p class='mb-4'>PAT testing is not only a cost-effective way to ensure the safety of employees, members of the public or tradespeople, but it can lead to reductions in insurance premiums also.</p> <p class='mb-4'>Our prices are tailored to your individual circumstances, and are an affordable way of gaining peace of mind.</p> <p><strong>We work hard so you can work safely!</strong></p>",
+  },
+];
 
 const features = [
   {
@@ -30,19 +53,24 @@ const features = [
     description:
       "Find out what can we do to help ensure your safety, provide peace of mind and even save you money.",
     href: "#",
-    icon: ArrowPathIcon,
+    icon: QuestionMarkCircleIcon,
     modal: "HelpModal",
   },
 ];
 
+function getModalContent(modalName) {
+  return modalContents.find((obj) => obj.name === modalName);
+}
+
 let showModal = ref(false);
 let modalName = ref("");
+let modalContent = ref(null);
 </script>
 <!-- -->
 <template>
   <Navbar />
   <div
-    class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 h-[calc(100vh-80px)]"
+    class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-[calc(100vh-80px)]"
   >
     <img
       alt=""
@@ -134,7 +162,7 @@ let modalName = ref("");
               :feature="feature"
               @add="
                 (name) => {
-                  modalName = name;
+                  modalContent = getModalContent(name);
                   showModal = true;
                 }
               "
@@ -144,5 +172,10 @@ let modalName = ref("");
       </div>
     </div>
   </div>
-  <Modal :name="modalName" :show="showModal" @close="showModal = false" />
+  <Modal :show="showModal" @close="showModal = false">
+    <template #header>{{ modalContent.title }}</template>
+    <template #default>
+      <div v-html="modalContent.body" />
+    </template>
+  </Modal>
 </template>

@@ -145,15 +145,13 @@ const cards = [
   <!--        <div class="block__textContainer">-->
   <!--          <h2 class="block__title">What is Portable Appliance Testing?</h2>-->
   <!--          <p class="block__para">-->
-  <!--            Portable Appliance Testing is the name given to a series of-->
-  <!--            inspections and electrical tests carried out on portable equipment-->
-  <!--            to ensure that it is able to be used safely. It is more accurately-->
-  <!--            known as the Inspection and Testing of In-service Electrical-->
-  <!--            Equipment. It is important to note that performing a Portable-->
-  <!--            Appliance Test doesn’t just consist of plugging a piece of-->
-  <!--            equipment into a PAT tester and seeing if it passes or fails.-->
-  <!--            Portable Appliance Testing also encompasses the recording and-->
-  <!--            upkeep of records.-->
+  Portable Appliance Testing is the name given to a series of inspections and
+  electrical tests carried out on portable equipment to ensure that it is able
+  to be used safely. It is more accurately known as the Inspection and Testing
+  of In-service Electrical Equipment. It is important to note that performing a
+  Portable Appliance Test doesn’t just consist of plugging a piece of equipment
+  into a PAT tester and seeing if it passes or fails. Portable Appliance Testing
+  also encompasses the recording and upkeep of records.
   <!--          </p>-->
   <!--        </div>-->
   <!--        <div class="block__imageContainer">-->
