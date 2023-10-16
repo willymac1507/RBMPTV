@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { Switch, SwitchGroup, SwitchLabel } from "@headlessui/vue";
 import FormInput from "./FormInput.vue";
 import FormTextArea from "./FormTextArea.vue";
+import emailjs from "@emailjs/browser";
 
 const formData = ref({
   companyName: "",
@@ -24,17 +25,35 @@ const formData = ref({
 
 function sendEmail(e) {
   e.preventDefault();
-  console.log(formData.value.companyName);
+  try {
+    emailjs.sendForm(
+      "service_rbmpat2023",
+      "template_5z2w93a",
+      "#emailForm",
+      "4xFGKTSY7k-UWM8zh",
+    );
+  } catch (error) {
+    console.log(error.message);
+  }
 }
 </script>
 
 <template>
   <form
+    id="emailForm"
     action="#"
     class="h-full mx-auto mt-8 max-w-xl sm:mt-10"
-    @submit="sendEmail"
+    @submit.prevent="sendEmail()"
   >
     <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-4">
+      <FormInput
+        v-model="formData.companyName"
+        autocomplete="organization"
+        class="sm:col-span-4"
+        label="Company"
+        name="company"
+        type="text"
+      />
       <FormInput
         v-model="formData.firstName"
         autocomplete="given-name"
