@@ -4,6 +4,7 @@ import { Switch, SwitchGroup, SwitchLabel } from "@headlessui/vue";
 import FormInput from "./FormInput.vue";
 import FormTextArea from "./FormTextArea.vue";
 import emailjs from "@emailjs/browser";
+import FlashMessage from "./FlashMessage.vue";
 
 const formData = ref({
   companyName: "",
@@ -23,17 +24,31 @@ const formData = ref({
   agreed: false,
 });
 
-function sendEmail(e) {
-  e.preventDefault();
+let flashMessage = "";
+let flashClass = "";
+let showFlash = ref(false);
+
+const emit = defineEmits(["sent"]);
+
+async function sendEmail(e) {
   try {
-    emailjs.sendForm(
+    await emailjs.sendForm(
       "service_rbmpat2023",
       "template_5z2w93a",
       "#emailForm",
       "4xFGKTSY7k-UWM8zh",
     );
+    const form = document.getElementById("emailForm");
+    form.reset();
+    emit("sent", {
+      message: "Success! Your message was sent!",
+      class: "bg-green-400 text-black",
+    });
   } catch (error) {
-    console.log(error.message);
+    emit("sent", {
+      message: "Sorry. There was an error sending. Please try again.",
+      class: "bg-red-400 text-black",
+    });
   }
 }
 </script>

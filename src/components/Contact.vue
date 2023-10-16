@@ -7,10 +7,20 @@
 import { ref } from "vue";
 import Navbar from "./Navbar.vue";
 import ContactForm from "./ContactForm.vue";
+import FlashMessage from "./FlashMessage.vue";
+
+let showFlash = ref(false);
+let flashMessage = ref("");
+let flashClass = ref("");
 </script>
 <!-- -->
 <template>
   <Navbar />
+  <FlashMessage
+    v-show="showFlash"
+    :class="flashClass"
+    :message="flashMessage"
+  />
   <div
     class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-[calc(100vh-80px)]"
   >
@@ -58,6 +68,14 @@ import ContactForm from "./ContactForm.vue";
         advice, please feel free to get in touch.
       </p>
     </div>
-    <ContactForm />
+    <ContactForm
+      @sent="
+        (args) => {
+          flashMessage = args.message;
+          flashClass = args.class;
+          showFlash = true;
+        }
+      "
+    />
   </div>
 </template>
