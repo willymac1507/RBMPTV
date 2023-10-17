@@ -21,7 +21,7 @@ defineProps({
       v-if="show"
       class="sc fixed inset-0 bg-[rgba(0,0,0,.7)] grid place-items-center"
     >
-      <div class="rounded-md bg-white p-8 w-[80vw] max-w-lg">
+      <div class="rounded-md bg-white p-8 w-[80vw] max-w-lg text-gray-900">
         <div class="w-full grid place-content-center mb-4">
           <img alt="" src="../../assets/images/rbm.logo.svg" width="150" />
         </div>

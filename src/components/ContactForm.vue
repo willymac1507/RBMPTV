@@ -28,7 +28,7 @@ let flashMessage = "";
 let flashClass = "";
 let showFlash = ref(false);
 
-const emit = defineEmits(["sent"]);
+const emit = defineEmits(["sent", "hideFlash"]);
 
 async function sendEmail(e) {
   try {
@@ -44,6 +44,9 @@ async function sendEmail(e) {
       message: "Success! Your message was sent!",
       class: "bg-green-400 text-black",
     });
+    setTimeout(() => {
+      emit("hideFlash");
+    }, 4000);
   } catch (error) {
     emit("sent", {
       message: "Sorry. There was an error sending. Please try again.",

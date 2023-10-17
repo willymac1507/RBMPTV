@@ -16,11 +16,20 @@ let flashClass = ref("");
 <!-- -->
 <template>
   <Navbar />
-  <FlashMessage
-    v-show="showFlash"
-    :class="flashClass"
-    :message="flashMessage"
-  />
+  <Transition
+    enter-active-class="transition duration-300"
+    enter-from-class="opacity-0 scale-125"
+    enter-to-class="opacity-100 scale-100"
+    leave-active-class="transition duration-200"
+    leave-from-class="opacity-100 scale-100"
+    leave-to-class="opacity-0 scale-125"
+  >
+    <FlashMessage
+      v-show="showFlash"
+      :class="flashClass"
+      :message="flashMessage"
+    />
+  </Transition>
   <div
     class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-[calc(100vh-80px)]"
   >
@@ -69,6 +78,7 @@ let flashClass = ref("");
       </p>
     </div>
     <ContactForm
+      @hideFlash="showFlash = false"
       @sent="
         (args) => {
           flashMessage = args.message;
