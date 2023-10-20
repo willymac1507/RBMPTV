@@ -10,7 +10,7 @@ import CardDeck from "./card deck/CardDeck.vue";
     <img
       alt=""
       class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
-      src="../assets/images/2377_Level_3_CG_Master.png"
+      src="../assets/images/HPAT400-action4.png"
     />
     <div
       class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
