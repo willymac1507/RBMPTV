@@ -31,7 +31,7 @@ let flashClass = ref("");
     />
   </Transition>
   <div
-    class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 min-h-[calc(100vh-80px)]"
+    class="relative isolate overflow-hidden bg-gray-900 py-24 md:py-32 min-h-[calc(100vh-80px)] px-4"
   >
     <img
       alt=""
@@ -40,7 +40,7 @@ let flashClass = ref("");
     />
     <div
       aria-hidden="true"
-      class="sm:absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+      class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
     >
       <div
         class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"

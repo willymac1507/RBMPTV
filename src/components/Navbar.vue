@@ -5,6 +5,7 @@ import { Dialog, DialogPanel } from "@headlessui/vue";
 
 const navigation = [
   { name: "About", href: "/about" },
+  { name: "Appliances", href: "/appliances" },
   { name: "Services", href: "/services" },
   { name: "Contact", href: "/contact" },
 ];
@@ -12,7 +13,7 @@ const navigation = [
 const mobileMenuOpen = ref(false);
 </script>
 <template>
-  <header class="absolute inset-x-0 top-0 sticky z-50 bg-blue-950">
+  <header class="inset-x-0 top-0 sticky z-50 bg-blue-950">
     <nav
       aria-label="Global"
       class="flex items-center justify-between p-4 lg:px-8"

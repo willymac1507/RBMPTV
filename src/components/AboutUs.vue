@@ -138,7 +138,9 @@ let modalContent = ref(null);
         >
           About Us
         </h2>
-        <p class="mt-6 text-lg text-justify leading-8 text-gray-300">
+        <p
+          class="mt-6 text-base md:text-lg text-justify leading-8 text-gray-300"
+        >
           We provide a professional PAT Testing service across East Anglia. From
           1 to 100 appliances or more, we can satisfy all your PAT testing
           needs, ensuring you are fully compliant with the latest regulations.
