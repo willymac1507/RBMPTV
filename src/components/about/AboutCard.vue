@@ -6,7 +6,7 @@ const feature = props.feature;
 console.log();
 
 function getImageUrl() {
-  return new URL(`../assets/images/${feature.image}`, import.meta.url);
+  return new URL(`/src/assets/images/${feature.image}`, import.meta.url);
 }
 </script>
 <template>

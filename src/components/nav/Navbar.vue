@@ -24,7 +24,7 @@ const mobileMenuOpen = ref(false);
           <img
             alt=""
             class="h-12 w-auto hover:animate-spin"
-            src="../assets/images/rbm.logo.svg"
+            src="../../assets/images/rbm.logo.svg"
           />
         </router-link>
       </div>
@@ -48,9 +48,7 @@ const mobileMenuOpen = ref(false);
         </router-link>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a class="text-sm font-semibold leading-6 text-white" href="#"
-          >Log in <span aria-hidden="true">&rarr;</span></a
-        >
+        <a class="text-sm font-semibold leading-6 text-white" href="#"></a>
       </div>
     </nav>
     <Dialog
@@ -64,12 +62,12 @@ const mobileMenuOpen = ref(false);
         class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10"
       >
         <div class="flex items-center justify-between">
-          <a class="-m-1.5 p-1.5" href="/">
+          <a class="-m-1.5 p-1.5" href="/public">
             <span class="sr-only">RB Mobile Pat Testing</span>
             <img
               alt=""
               class="h-8 w-auto"
-              src="../assets/images/rbm.logo.svg"
+              src="../../assets/images/rbm.logo.svg"
             />
           </a>
           <button
@@ -92,13 +90,13 @@ const mobileMenuOpen = ref(false);
                 >{{ item.name }}
               </router-link>
             </div>
-            <div class="py-6">
-              <a
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"
-                href="#"
-                >Log in</a
-              >
-            </div>
+            <!--            <div class="py-6">-->
+            <!--              <a-->
+            <!--                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"-->
+            <!--                href="#"-->
+            <!--                >Log in</a-->
+            <!--              >-->
+            <!--            </div>-->
           </div>
         </div>
       </DialogPanel>

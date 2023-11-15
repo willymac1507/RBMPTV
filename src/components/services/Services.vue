@@ -1,7 +1,7 @@
 <script setup>
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/vue/24/outline";
-import Navbar from "./Navbar.vue";
+import Navbar from "../nav/Navbar.vue";
 
 const services = [
   {
@@ -27,7 +27,7 @@ const services = [
   {
     category: "Construction Trade",
     description:
-      "We can test all appliances whether 240V or 110V. We can come to you on site or at your yard or depot, whichever is better for you.",
+      "Along with being able to test all 240v and 110v, we also are able to test 16 amp and 32 amp appliances and cabling. Whether at your yard, depot or current work site, we can come to you.",
   },
   {
     category: "Entertainment",
@@ -43,7 +43,6 @@ const services = [
   // More questions...
 ];
 </script>
-
 <template>
   <Navbar />
   <div
@@ -52,7 +51,7 @@ const services = [
     <img
       alt=""
       class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
-      src="../assets/images/pat-testing-equipment-2.png"
+      src="../../assets/images/pat-testing-equipment-2.png"
     />
     <div
       class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
@@ -124,7 +123,6 @@ const services = [
           :key="service.category"
           v-slot="{ open }"
           as="div"
-          class="pt-6"
         >
           <dt>
             <DisclosureButton
@@ -144,7 +142,7 @@ const services = [
             </DisclosureButton>
           </dt>
           <DisclosurePanel as="dd" class="mt-2 px-12">
-            <p class="text-left leading-7 text-gray-400">
+            <p class="text-left leading-7 text-gray-200">
               {{ service.description }}
             </p>
           </DisclosurePanel>
@@ -153,5 +151,4 @@ const services = [
     </div>
   </div>
 </template>
-
 <style />

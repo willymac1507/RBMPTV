@@ -4,7 +4,7 @@ defineProps({
 });
 
 function getImageUrl(fileName) {
-  return new URL(`../../assets/images/${fileName}`, import.meta.url);
+  return new URL(`/src/assets/images/${fileName}`, import.meta.url);
 }
 </script>
 
@@ -63,24 +63,3 @@ function getImageUrl(fileName) {
     </div>
   </div>
 </template>
-
-<style>
-@media screen and (max-width: 64rem) {
-  .col {
-    width: calc(33.333333% - 2rem);
-  }
-}
-
-@media screen and (max-width: 48rem) {
-  .col {
-    width: calc(50% - 2rem);
-  }
-}
-
-@media screen and (max-width: 32rem) {
-  .col {
-    width: 100%;
-    margin: 0 0 2rem 0;
-  }
-}
-</style>

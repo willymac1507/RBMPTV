@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 
-import Navbar from "./Navbar.vue";
+import Navbar from "../nav/Navbar.vue";
 </script>
 <!--Begin Template-->
 <template>
@@ -47,7 +47,7 @@ import Navbar from "./Navbar.vue";
         <img
           alt=""
           class="opacity-60 h-screen"
-          src="../assets/images/rbm.logo.svg"
+          src="../../assets/images/rbm.logo.svg"
         />
       </div>
       <div

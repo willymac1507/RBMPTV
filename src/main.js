@@ -2,11 +2,11 @@ import { createApp, h } from "vue";
 import "./style.css";
 import { createRouter, createWebHashHistory } from "vue-router";
 import App from "./App.vue";
-import Home from "./components/Home.vue";
-import AboutUs from "./components/AboutUs.vue";
-import Services from "./components/Services.vue";
-import Contact from "./components/Contact.vue";
-import Appliances from "./components/Appliances.vue";
+import Home from "./components/home/Home.vue";
+import AboutUs from "./components/about/AboutUs.vue";
+import Services from "./components/services/Services.vue";
+import Contact from "./components/contact/Contact.vue";
+import Appliances from "./components/appliances/Appliances.vue";
 
 const routes = [
   {

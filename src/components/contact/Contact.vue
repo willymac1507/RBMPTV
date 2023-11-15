@@ -5,9 +5,9 @@
 //   PhoneIcon,
 // } from "@heroicons/vue/24/outline";
 import { ref } from "vue";
-import Navbar from "./Navbar.vue";
+import Navbar from "../nav/Navbar.vue";
 import ContactForm from "./ContactForm.vue";
-import FlashMessage from "./FlashMessage.vue";
+import FlashMessage from "../utilities/FlashMessage.vue";
 
 let showFlash = ref(false);
 let flashMessage = ref("");
@@ -36,7 +36,7 @@ let flashClass = ref("");
     <img
       alt=""
       class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
-      src="../assets/images/seawrd.png"
+      src="../../assets/images/seawrd.png"
     />
     <div
       aria-hidden="true"
